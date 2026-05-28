@@ -1,0 +1,74 @@
+====================================================
+  ÜRETİM İZLEME PANELİ  —  Next.js Projesi
+====================================================
+
+Bu klasör, çalışan bir Next.js projesidir. Açıp çalıştırmak için
+bilgisayarda Node.js kurulu olması yeterlidir.
+
+----------------------------------------------------
+ADIM ADIM ÇALIŞTIRMA
+----------------------------------------------------
+
+1) Node.js kurulu mu kontrol et.
+   Terminal (Mac) veya PowerShell (Windows) aç, şunu yaz:
+
+       node -v
+
+   Bir sürüm numarası çıkarsa (örn. v20.11.0) hazır demektir.
+   "bulunamadı / not found" derse: https://nodejs.org adresinden
+   LTS sürümünü indirip kur, sonra bu adıma geri dön.
+
+2) Bu klasörün içine gir. Terminalde:
+
+       cd klasörün/yolu/panel
+
+   (İpucu: "cd " yazıp ardından panel klasörünü terminale
+    sürükleyip bırakırsan yol otomatik yazılır.)
+
+3) Gerekli paketleri indir (tek seferlik, internet gerekir):
+
+       npm install
+
+   Birkaç dakika sürebilir. Biten "node_modules" klasörü oluşur.
+
+4) Projeyi başlat:
+
+       npm run dev
+
+5) Tarayıcıda şu adresi aç:
+
+       http://localhost:3000
+
+   Panel karşında. Durdurmak için terminalde Ctrl + C.
+
+----------------------------------------------------
+GERÇEK API'YE BAĞLAMA (opsiyonel)
+----------------------------------------------------
+
+app/MachineDashboard.jsx dosyasını aç. En üstte:
+
+    const API_URL = "";
+
+Buraya backend adresini yaz, örn:
+
+    const API_URL = "https://senin-api-adresin.com/v1/machines";
+
+Boş bırakılırsa panel örnek (mock) veriyle çalışır.
+
+----------------------------------------------------
+DOSYA YAPISI
+----------------------------------------------------
+
+panel/
+├─ app/
+│  ├─ layout.js            (genel sayfa iskeleti)
+│  ├─ page.js              (ana sayfa - paneli çağırır)
+│  └─ MachineDashboard.jsx (panelin kendisi)
+├─ package.json            (proje tanımı + paketler)
+├─ next.config.mjs
+├─ jsconfig.json
+└─ BENI-OKU.txt            (bu dosya)
+
+NOT: "node_modules" klasörü zip içinde YOKTUR (çok büyük olduğu için).
+"npm install" komutu onu otomatik oluşturur.
+====================================================
